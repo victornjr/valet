@@ -4,7 +4,7 @@
     font-family: 'Anton', sans-serif;
 }
 
-section#banner{
+section #banner{
     width:100%;
     background-image:url(https://cloud.githubusercontent.com/assets/16769115/13607903/f09005fe-e517-11e5-847b-4756ee74fd73.png);
     background-attachment: contain; /*para que la imagen ocupe toda la pantalla*/
