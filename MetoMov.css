@@ -4,7 +4,7 @@
     font-family: 'Anton', sans-serif;
 }
 
-section #banner{
+#banner{
     width:100%;
     background-image:url("http://static8.depositphotos.com/1024764/1053/i/950/depositphotos_10535542-Seamless-background-with-QR-code-pattern.jpg");
     background-attachment: contain; /*para que la imagen ocupe toda la pantalla*/
