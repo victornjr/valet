@@ -2,6 +2,14 @@
 open(url,'','top=100,left=240,width=700,height=500') ; 
 } 
 
+video = document.getElementById("live");
+
+navigator.webkitGetUserMedia("video",function(stream) {
+  video.src = webkitURL.createObjectURL(stream);
+};
+function(err) {
+  console.log("Unable to get video stream!");
+}
 $(document).on("ready",function(){
     
    $("#banner").css({"height":$(window).height()+"px"});               
