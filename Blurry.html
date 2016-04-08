@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blurry</title>
+	<link rel="stylesheet" type="text/css" href="blurry.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<div class="background" id=fondo>
+
+		<div class="content">
+				<div class="azul" id='datos' style="align-self: center;">
+		</div>
+			<button id='aceptar'>Accept</button>
+		</div>
+	</div>
+	<div class="background" id="left"></div>
+	<div class="background" id="center">
+		<div class="content">
+  <button class="azul" id="scan">Scan the QR code</button>
+</div>
+	</div>
+	<div class="background" id="right">
+	</div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+
+/*$("input").prop('disabled', true);
+$("input").prop('disabled', false);
+var timeoutID = window.setTimeout(func, [delay, param1, param2, ...]);
+var timeoutID = window.setTimeout(code, [delay]);*/
+		var hora, min, seg, total; 
+
+	$(document).ready(function(){
+		$('#fondo').hide();
+		$('cont').prop('disabled',true);
+		$('#cont').hide();
+	});
+
+	$(window).load(function(){
+		$('#fondo').hide();
+	});
+	$( "#scan" ).click(function() {
+		$('#center').remove();
+
+  		$(document).keypress(function(e) {
+	    	if(e.which == 13) {
+	        $( '#fondo' ).show();
+	        $('#scan').remove();
+	        $('#center').remove();
+	        $('#left').remove();
+	        $('#right').remove();
+	        $('body').css("background-image", "url(black.jpg)");
+			$('#datos').append(tiempo());
+    }
+});
+	function tiempo() {
+    	hr = Math.floor(Math.random()*24);
+		min = Math.floor(Math.random()*60);
+		seg = Math.floor(Math.random()*60);
+
+		var h = hr.toString();
+		var m = min.toString();
+		var s = seg.toString();
+
+		if (hr < 1){
+			total = 5;
+		}
+		else if (hr < 2){
+			total = 13;
+		}
+		else if(hr < 3){
+			total = 21;
+		}
+		else if (hr < 4){
+			total = 29;
+		}
+		else if(hr < 5){
+			total = 37;
+		}
+		else if(hr < 6){
+			total = 45;
+		}
+		else if(hr < 7){
+			total = 53;
+		}
+		else if(hr < 8){
+			total = 61;
+		}
+		else if(hr < 9){
+			total = 69;
+		}
+		else if(hr < 10){
+			total = 77;
+		}
+		else if(hr < 11){
+			total = 85;
+		}
+		else if(hr < 12){
+			total = 93;
+		}
+		else if(hr < 13){
+			total = 100;
+		}
+		else if(hr < 14){
+			total = 108;
+		}
+		else if(hr < 15){
+			total = 115;
+		}
+		else if(hr < 16){
+			total = 123;
+		}
+		else if(hr < 17){
+			total = 130;
+		}
+		else if(hr < 18){
+			total = 138;
+		}
+		else if(hr < 19){
+			total = 145;
+		}
+		else if(hr < 20){
+			total = 154;
+		}
+		else if(hr < 21){
+			total = 160;
+		}
+		else if(hr < 22){
+			total = 167;
+		}
+		else{
+			total = 175;
+		}
+
+		var t = total.toString();
+		return '<p>Time ' + h + ':' + m + ':' + s + '</p></b><p>Total ' + '$' + t + '.00' + '<p>';        
+}
+    $('#aceptar').click(function(){
+    	$('p').remove();
+    	$('#aceptar').remove();
+    	$( "#datos" ).append( "<p>You have 15 minutes to leave the parking lot</p>" );
+    });
+});
+
+
+</script>
+	
+</body>
+</html>
